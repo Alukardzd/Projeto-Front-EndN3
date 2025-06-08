@@ -4,8 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja</title>
+    <link rel="stylesheet" href="Estilos/style-login.css">
 </head>
 <body>
     
+<div class="container" id="loginForm">
+  <h2>Login</h2>
+  <form>
+    <input type="text" placeholder="Usuário" required>
+    <input type="password" placeholder="Senha" required>
+    <input type="submit" value="Entrar">
+  </form>
+  <div class="switch">
+    Não tem uma conta? <a onclick="mostrarRegistro()">Registrar</a>
+  </div>
+</div>
+
+<div class="container" id="registerForm" style="display: none;">
+  <h2>Registro</h2>
+  <form>
+    <input type="text" placeholder="Nome de usuário" required>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Senha" required>
+    <input type="submit" value="Registrar">
+  </form>
+  <div class="switch">
+    Já tem uma conta? <a onclick="mostrarLogin()">Fazer login</a>
+  </div>
+</div>
+
+<script>
+  function mostrarRegistro() {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("registerForm").style.display = "block";
+  }
+
+  function mostrarLogin() {
+    document.getElementById("registerForm").style.display = "none";
+    document.getElementById("loginForm").style.display = "block";
+  }
+</script>
+
 </body>
 </html>
