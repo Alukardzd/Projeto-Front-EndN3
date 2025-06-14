@@ -4177,6 +4177,13 @@ textarea.form-control-lg {
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
 }
+
+  .card:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+    border: 1px solid #000000;
+}
+
 .card > hr {
   margin-right: 0;
   margin-left: 0;
@@ -5782,6 +5789,16 @@ textarea.form-control-lg {
   padding: var(--bs-popover-body-padding-y) var(--bs-popover-body-padding-x);
   color: var(--bs-popover-body-color);
 }
+
+.carousel-item img {
+  opacity: 0.9; /* ou até 1.0 para destacar mais */
+}
+
+.carousel-item img {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
 
 .carousel {
   position: relative;
