@@ -1,0 +1,75 @@
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+    }
+
+    .parallax-background {
+      background-image: url('https://images.unsplash.com/photo-1606112219348-204d7d8b94ee?auto=format&fit=crop&w=1950&q=80'); /* Imagem de fundo */
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      z-index: 0;
+    }
+
+    .about-section {
+      padding: 100px 20px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.7); /* escurece para contraste */
+      backdrop-filter: blur(2px);
+      z-index: 1;
+    }
+
+    .about-content {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .about-content h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #cfd8dc;
+    }
+
+    .about-content a {
+      color: #4fc3f7;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .game-box {
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+
+    .game-box img {
+      width: 100%;
+      display: block;
+    }
+
+    .game-box:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .about-content h1 { font-size: 2rem; }
+    }
