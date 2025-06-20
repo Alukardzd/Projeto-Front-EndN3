@@ -1,11 +1,12 @@
-
+//Recupera o Json do carrinho no local storage
 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
+//Esta Funcao é responsavel em geral por colocar os itens do carrinho na pagina dele, sendo os valores, nomes e as fotos
+//alem de criar divs com o create element, e referenciar as tags de conteudo do html do carrinho para fazer as alterações nescessarias
     function atualizarCarr(){
         const lista = document.getElementById('lista-carrinho');
         lista.innerHTML = '';
         let total = 0;
-
+//percorre o array do carrinho e soma o preco no total
         carrinho.forEach((item, index) => {
             total += item.preco;
             const li = document.createElement('li');
@@ -39,7 +40,8 @@ let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
         document.getElementById('total').textContent = total.toFixed(2);
     }
-
+//a funcao que remove o respectivo item do carrinho ao clicar no botao remover 
+//ela remove o item do index que o for each havia contado. Como cada item tem seu proprio botao remover, nao ocorrera um erro ao retirar um item do carrinho
     function remover(index){
         carrinho.splice(index, 1);
         localStorage.setItem('carrinho', JSON.stringify(carrinho));
@@ -47,7 +49,7 @@ let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     }
 
     atualizarCarr();
-
+//Parte da biblioteca Sweet Alerts que faz a animacao de carrinho vazio
     function finalizarCompra() {
     const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
@@ -60,7 +62,7 @@ let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
         });
         return;
     }
-
+//Tambem parte da bliblioteca Sweet Alerts, este faz a animacao de compra finalizada
     Swal.fire({
         title: 'Compra finalizada!',
         text: 'Obrigado pela sua compra.',

@@ -1,10 +1,14 @@
+//cria a funcao do butao de adicionar ao carrinho com os parametros dos produtos
+//e recupera a variavel carrinho salvo no Local Storage do computador em forma de JSON, e coloca os tres parametros nele
+//caso nao houver nada salvo ele faz um Array vazio
+//entao se forem adicionados itens eles sao colocados novamente no Local storage em forma JSON
 function addCarrinho(nome, preco, imagem){
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     carrinho.push({nome, preco, imagem});
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
     atualizarContadorCarrinho();
 
-    
+//Este é o codigo da biblioteca Sweet Alerts, utilizado para fazer o pop up de item adicionado ao carrinho e animaçoes correspondentes    
     Swal.fire({
         title: 'Produto Adicionado!',
         text: `${nome} foi adicionado ao carrinho.`,
@@ -21,7 +25,7 @@ function addCarrinho(nome, preco, imagem){
     });
 }
 
-
+//Essa função recupera os itens atuais do carrinho e se for adicionado um novo item ele incrementa o numero de itens no contador do carrinho
 function atualizarContadorCarrinho() {
     const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     const contador = document.getElementById('contador-carrinho');
